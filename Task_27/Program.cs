@@ -8,17 +8,26 @@
 
 */
 
+// input data
 int InputNum(string msg){
     Console.Write(msg);
     return Convert.ToInt32(Console.ReadLine());
 }
 
-int num = InputNum("Input number: ");
-int summ = 0;
+// calculate summ
+int CalcSum(int num){
+    int summ = 0;
 
-while(num > 0){
-    summ += num % 10;
-    num = num / 10;
+    if(num < 0) num = -num;
+
+    while(num > 0){
+        summ += num % 10;
+        num = num / 10;
+    }
+
+    return summ;
 }
 
-Console.WriteLine($"Summ: {summ}");
+// main body
+int number = InputNum("Input number: ");
+Console.WriteLine($"Summ: {CalcSum(number)}");
