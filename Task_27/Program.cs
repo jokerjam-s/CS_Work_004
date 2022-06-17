@@ -13,4 +13,12 @@ int InputNum(string msg){
     return Convert.ToInt32(Console.ReadLine());
 }
 
-int num = InputNum("INput number: ");
+int num = InputNum("Input number: ");
+int summ = 0;
+
+while(num > 0){
+    summ += num % 10;
+    num = num / 10;
+}
+
+Console.WriteLine($"Summ: {summ}");
